@@ -1,5 +1,44 @@
-<html>
-	<body>
-		<a href="http://min2.com">你好，这是一个链接</a>
-	</bogy>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Image Visibility Example</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .large-font {
+            font-size: 24px; /* 调整字体大小 */
+        }
+        #imageContainer {
+            text-align: center; /* 图片居中 */
+        }
+        #imageContainer img {
+            display: block; /* 每个图片占据一行 */
+            margin: 10px auto; /* 图片间距和居中 */
+            width: 300px; /* 统一图片宽度 */
+            height: auto; /* 保持图片纵横比 */
+        }
+    </style>
+    <script>
+        function toggleVisibility() {
+            var images = document.getElementById('imageContainer');
+            if (images.style.display === 'none' || images.style.display === '') {
+                images.style.display = 'block';
+            } else {
+                images.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <span class="large-font">你好，这是一个</span>
+    <a href="javascript:void(0);" onclick="toggleVisibility()" class="large-font">链接</a>
+    <div id="imageContainer" class="hidden">
+        <img src="image1.jpg" alt="Image 1">
+        <img src="image2.jpg" alt="Image 2">
+        <img src="image3.jpg" alt="Image 3">
+    </div>
+</body>
 </html>
